@@ -128,58 +128,7 @@ https://templatemo.com/tm-550-diagoona
     </div>
 
 
-    <script>
-         var ssContactForm = function() {
-
-/* local validation */
-$('#contactForm').validate({
-
-    /* submit via ajax */
-    submitHandler: function(form) {
-
-        var sLoader = $('.submit-loader');
-
-        $.ajax({
-
-            type: "POST",
-            url: "sendEmail.php",
-            data: $(form).serialize(),
-            beforeSend: function() { 
-
-                sLoader.slideDown("slow");
-
-            },
-            success: function(msg) {
-
-                // Message was sent
-                if (msg == 'OK') {
-                    sLoader.slideUp("slow"); 
-                    $('.message-warning').fadeOut();
-                    $('#contactForm').fadeOut();
-                    $('.message-success').fadeIn();
-                }
-                // There was an error
-                else {
-                    sLoader.slideUp("slow"); 
-                    $('.message-warning').html(msg);
-                    $('.message-warning').slideDown("slow");
-                }
-
-            },
-            error: function() {
-
-                sLoader.slideUp("slow"); 
-                $('.message-warning').html(" We are sorry. Contact form Plugins are under mainteneace. Please use whatsapp or facebook to contact..");
-                $('.message-warning').slideDown("slow");
-
-            }
-
-        });
-    }
-
-});
-};
-    </script>
+    
 
     <script src="js/jquery-3.4.1.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
